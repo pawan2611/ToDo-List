@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <h1><%= today %></h1>
+    <div class="list">
+      <form action="/" method="post">
+        <input
+          type="text"
+          name="newitem"
+          id=""
+          autocomplete="off"
+          placeholder="Add Your Todo Here!"
+        />
+        <button type="submit"><h2>+</h2></button>
+      </form>
+      <div class="ul">
+        <% itemsArray.forEach(task => { %> <% function
+        generateRandomString(length, charArray) { %> <% let result = ''; %> <%
+        const arrayLength = charArray.length; %> <% for (let i = 0; i < length;
+        i++) { %> <% const randomIndex = Math.floor(Math.random() *
+        arrayLength); %> <% result += charArray[randomIndex]; %> <% } %> <%
+        return result; %> <% } %> <% const characters = ['a', 'b', 'c', 'd',
+        'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
+        's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5',
+        '6', '7', '8', '9']; %> <% const randomString = generateRandomString(5,
+        characters); %>
+        <li id="<%= randomString %>" class="">
+          <input
+            type="checkbox"
+            name="done"
+            id="<%= randomString %>"
+            class="mycheckbox"
+          /><strong><%= task %></strong>
+        </li>
+        <% }) %>
+      </div>
+    </div>
+    <div class="copyright">
+      ©-2023 All Rights Reserved
+      <a
+        id="link-to-portfolio"
+        target="_blank"
+        href="https://pawan2611.github.io/Pawan-Kumar/"
+        >@Pawan Kumar</a
+      >
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
